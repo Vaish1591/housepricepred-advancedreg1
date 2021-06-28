@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>House Price prediction analysis using Machine Learning</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="number" id= "OverallQual" name="OverallQual" placeholder="Overall qualification.." required="required" />
+        <input type="number" id= "GrLivArea" name="GrLivArea" placeholder="Ground Floor living area in sqft.." required="required" />
+	<input type="number" id= "GarageArea" name="GarageArea" placeholder="Garage area in sqft." required="required" />
+        <input type="number" id= "TotalBsmtSF" name="TotalBsmtSF" placeholder="Total basement surface area.." required="required" />
+        <input type="number" id= "1stFlrSF" name="1stFlrSF" placeholder="First floor area in sqft" required="required" />
+ 	<input type="number" id= "FullBath" name="FullBath" placeholder="No. of full baths.." required="required" />
+        <input type="number" id= "YearBuilt" name="YearBuilt" placeholder="Year built.." required="required" />
+ 	<input type="number" id= "YearRemodAdd" name="YearRemodAdd" placeholder="Year renovated.." required="required" />
+ 	<input type="number" id= "GarageYrBlt" name="GarageYrBlt" placeholder="Year garage built.." required="required" />
+ 	<input type="number" id= "MSZoning" name="MSZoning" placeholder="The general zoning classification" required="required" />
+ 	<input type="number" id= "Neighborhood" name="Neighborhood" placeholder="Physical locations within Ames city limits" required="required" />
+ 	<input type="number" id= "Exterior1st" name="Exterior1st" placeholder="Exterior covering on house.." required="required" />
+ 	<input type="number" id= "BsmtExposure" name="BsmtExposure" placeholder="Walkout or garden level basement walls" required="required" />
+	<input type="number" id= "BsmtFinType1" name="BsmtFinType1" placeholder="Quality of basement finished area" required="required" />
+	<input type="number" id= "HeatingQC" name="HeatingQC" placeholder="Heating quality and condition" required="required" />
+	<input type="number" id= "CentralAir" name="CentralAir" placeholder="Central air conditioning" required="required" />
+	<input type="number" id= "Electrical" name="Electrical" placeholder="Electrical system" required="required" />
+	<input type="number" id= "FireplaceQu" name="FireplaceQu" placeholder="Fireplace quality" required="required" />
+	<input type="number" id= "GarageCond" name="GarageCond" placeholder="Garage condition" required="required" />
+	<input type="number" id= "PavedDrive" name="PavedDrive" placeholder="Paved driveway" required="required" />
+	<input type="number" id= "Fence" name="Fence" placeholder="Fence quality" required="required" />
+	<input type="number" id= "TotRmsAbvGrd" name="TotRmsAbvGrd" placeholder="Total rooms above ground" required="required" />
+	<input type="number" id= "SaleCondition" name="SaleCondition" placeholder="Condition of sale" required="required" />
+	
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
